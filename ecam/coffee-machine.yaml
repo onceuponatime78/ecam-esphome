@@ -1236,7 +1236,7 @@ script:
                  {49, id(par_49)}, {51, id(par_51)}, {53, id(par_53)}, {55, id(par_55)}, {57, id(par_57)},
                  {58, id(par_58)}})
               p.second->publish_state(v[p.first - 40]);
-            id(grounds_fill).publish_state(id(grounds).state ? 100.0f : std::min(100.0f, v[0] * 100.0f / ${ecam_grounds_full}));
+            id(grounds_fill).publish_state(id(grounds).state ? 100.0f : std::min(100.0f, roundf(v[0] * 100.0f / ${ecam_grounds_full})));
           });
           id(machine).read_param(116, [](uint32_t v) { id(par_116).publish_state(v); });
 
